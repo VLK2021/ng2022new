@@ -22,7 +22,14 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'home-page', component: HomeComponent},
-      {path: 'users-page', component: UserDetailsComponent}
+      {
+        path: 'users-page',
+        component: UsersComponent,
+        children: [
+          {path: 'user-details/:id', component: UserDetailsComponent}
+        ]
+      },
+      // {path: 'user-details/:id', component: UserDetailsComponent}
     ])
   ],
   providers: [],
