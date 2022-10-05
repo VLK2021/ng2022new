@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClientModule} from "@angular/common/http";
+import {Component, OnInit} from '@angular/core';
+
 import {IUser} from "../../interfaces/IUser";
 import {UserService} from "../../services/user.service";
+
 
 @Component({
   selector: 'app-users',
