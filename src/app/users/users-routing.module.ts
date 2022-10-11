@@ -6,7 +6,8 @@ import {UserDetailsComponent} from "./user-details/user-details.component";
 
 
 const routes: Routes = [
-  {path:'', component: UsersComponent, children:[
+  {path:'', component: UsersComponent,
+    children:[
       {path:':id', component: UserDetailsComponent}
     ]}
 ];

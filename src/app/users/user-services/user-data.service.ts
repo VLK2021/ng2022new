@@ -17,4 +17,10 @@ export class UserDataService {
      return this.httpClient.get<IUser[]>(this._url)
   }
 
+  getUser(id:number): Observable<IUser> {
+    return this
+      .httpClient
+      .get<IUser>(this._url + '/' + id)
+  }
+
 }
