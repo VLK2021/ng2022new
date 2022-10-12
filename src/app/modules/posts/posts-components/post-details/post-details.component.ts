@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
-import {IPostDetails} from "../../../interfaces/IPostDetails";
-import {PostDataService} from "../post-service/post-data.service";
+import {IPostDetails} from "../../../../interfaces/IPostDetails";
+import {PostDataService} from "../../post-service/post-data.service";
 
 
 @Component({

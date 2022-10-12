@@ -4,7 +4,7 @@ import {HttpClientModule} from "@angular/common/http";
 
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts-components/posts/posts.component';
-import { PostDetailsComponent } from './post-details/post-details.component';
+import { PostDetailsComponent } from './posts-components/post-details/post-details.component';
 import {PostDataService} from "./post-service/post-data.service";
 import { PostComponent } from './posts-components/post/post.component';
 
