@@ -7,8 +7,8 @@ import {
 import {Observable, of, throwError} from 'rxjs';
 
 
-import {IUser} from "../../interfaces/IUser";
-import {UserDataService} from "./user-data.service";
+import {IUser} from "../../../interfaces/IUser";
+import {UserDataService} from "../user-data.service";
 
 
 

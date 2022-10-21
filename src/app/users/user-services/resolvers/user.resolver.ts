@@ -6,8 +6,8 @@ import {
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
-import {UserDataService} from "./user-data.service";
-import {IUser} from "../../interfaces/IUser";
+import {UserDataService} from "../user-data.service";
+import {IUser} from "../../../interfaces/IUser";
 
 
 @Injectable({
