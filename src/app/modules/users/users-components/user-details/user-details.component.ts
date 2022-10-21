@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 
 import {IUserDetails} from "../../../../interfaces/IUserDetails";
 import {UserDataService} from "../../user-services/user-data.service";
+import {IUser} from "../../../../interfaces/IUser";
 
 
 @Component({
@@ -14,13 +15,13 @@ import {UserDataService} from "../../user-services/user-data.service";
 export class UserDetailsComponent implements OnInit {
   userDetailsObj: IUserDetails;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private UserDataService: UserDataService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      this.UserDataService.getUser(id).subscribe(value => this.userDetailsObj = <IUserDetails>value);
-    })
+    // this.activatedRoute.params.subscribe(({id}) => {
+    //   this.UserDataService.getUser(id).subscribe(value => this.userDetailsObj = <IUserDetails>value);
+    // })
+    this.activatedRoute.data.subscribe(({userData}) => console.log(userData));
   }
 
 }

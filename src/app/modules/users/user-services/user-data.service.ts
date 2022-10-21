@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {catchError, map, Observable, throwError} from "rxjs";
 
 import {IUser} from "../../../interfaces/IUser";
 import {urls} from "../../../constants";
+import {IUserDetails} from "../../../interfaces/IUserDetails";
 
 
 @Injectable({
@@ -16,7 +17,13 @@ export class UserDataService {
   }
 
   getUsers(): Observable<IUser[]> {
-     return this.httpClient.get<IUser[]>(urls.users)
+     return this
+       .httpClient
+       .get<IUser[]>(urls.users)
+       .pipe(
+         map(value => value),
+         catchError((err)=> throwError('qwqwqw'))
+       );
   }
 
   getUser(id:number): Observable<IUser> {

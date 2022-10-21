@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {UsersComponent} from "./users-components/users/users.component";
 import {UserDetailsComponent} from "./users-components/user-details/user-details.component";
 import {UserGuard} from "./user-services/guards/user.guard";
+import {UsersResolver} from "./user-services/resolvers/users.resolver";
 
 
 const routes: Routes = [
   {path:'', component: UsersComponent,
+    resolve:{usersData:UsersResolver},
     canActivate:[UserGuard],
     canDeactivate:[UserGuard],
     children:[
