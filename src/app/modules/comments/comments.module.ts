@@ -7,6 +7,7 @@ import { CommentsComponent } from './comments-components/comments/comments.compo
 import { CommentComponent } from './comments-components/comment/comment.component';
 import { CommentDetailsComponent } from './comments-components/comment-details/comment-details.component';
 import {CommentDataService} from "./comment-service/comment-data.service";
+import {CommentGuard} from "./comment-service/guards/comment.guard";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {CommentDataService} from "./comment-service/comment-data.service";
     HttpClientModule
   ],
   providers:[
-    CommentDataService
+    CommentDataService,
+    CommentGuard,
   ]
 })
 export class CommentsModule { }
