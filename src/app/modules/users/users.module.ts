@@ -7,6 +7,7 @@ import { UsersComponent } from './users-components/users/users.component';
 import {UserDataService} from "./user-services/user-data.service";
 import { UserComponent } from './users-components/user/user.component';
 import { UserDetailsComponent } from './users-components/user-details/user-details.component';
+import {UserGuard} from "./user-services/guards/user.guard";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { UserDetailsComponent } from './users-components/user-details/user-detai
     HttpClientModule
   ],
   providers:[
-    UserDataService
+    UserDataService,
+    UserGuard
   ]
 })
 export class UsersModule { }
