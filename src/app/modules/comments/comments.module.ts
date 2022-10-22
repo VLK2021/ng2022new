@@ -9,6 +9,7 @@ import { CommentDetailsComponent } from './comments-components/comment-details/c
 import {CommentDataService} from "./comment-service/comment-data.service";
 import {CommentGuard} from "./comment-service/guards/comment.guard";
 import {CommentsResolver} from "./comment-service/resolvers/comments.resolver";
+import {CommentResolver} from "./comment-service/resolvers/comment.resolver";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {CommentsResolver} from "./comment-service/resolvers/comments.resolver";
   providers:[
     CommentDataService,
     CommentsResolver,
+    CommentResolver,
     CommentGuard,
   ]
 })

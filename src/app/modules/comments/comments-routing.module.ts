@@ -5,6 +5,7 @@ import {CommentsComponent} from "./comments-components/comments/comments.compone
 import {CommentDetailsComponent} from "./comments-components/comment-details/comment-details.component";
 import {CommentGuard} from "./comment-service/guards/comment.guard";
 import {CommentsResolver} from "./comment-service/resolvers/comments.resolver";
+import {CommentResolver} from "./comment-service/resolvers/comment.resolver";
 
 const routes: Routes = [
   {path:'', component: CommentsComponent,
@@ -12,7 +13,8 @@ const routes: Routes = [
     canActivate:[CommentGuard],
     canDeactivate:[CommentGuard],
   children:[
-    {path:':id', component: CommentDetailsComponent}
+    {path:':id', component: CommentDetailsComponent,
+      resolve:{commentData:CommentResolver}}
   ]}
 ];
 

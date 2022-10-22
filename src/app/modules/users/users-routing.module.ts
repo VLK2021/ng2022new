@@ -5,6 +5,7 @@ import {UsersComponent} from "./users-components/users/users.component";
 import {UserDetailsComponent} from "./users-components/user-details/user-details.component";
 import {UserGuard} from "./user-services/guards/user.guard";
 import {UsersResolver} from "./user-services/resolvers/users.resolver";
+import {UserResolver} from "./user-services/resolvers/user.resolver";
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
     canActivate:[UserGuard],
     canDeactivate:[UserGuard],
     children:[
-      {path:':id', component: UserDetailsComponent}
+      {path:':id', component: UserDetailsComponent,
+      resolve:{userData:UserResolver}
+      }
     ]}
 ];
 

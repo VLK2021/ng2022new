@@ -5,6 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
+
 import {IUser} from "../../../../interfaces/IUser";
 import {UserDataService} from "../user-data.service";
 

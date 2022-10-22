@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CommentDataService} from "../../comment-service/comment-data.service";
+
 import {IcommentDetails} from "../../../../interfaces/IcommentDetails";
+
 
 interface ConstructorParams {
   private: ActivatedRoute;
@@ -12,16 +13,14 @@ interface ConstructorParams {
   templateUrl: './comment-details.component.html',
   styleUrls: ['./comment-details.component.css']
 })
+
 export class CommentDetailsComponent implements OnInit {
   commentDetailsObj: IcommentDetails
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private commentDataService: CommentDataService) { }
-
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      this.commentDataService.getComment(id).subscribe(value => this.commentDetailsObj = <IcommentDetails>value);
-    })
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({commentData}) => this.commentDetailsObj = commentData);
+  }
 }

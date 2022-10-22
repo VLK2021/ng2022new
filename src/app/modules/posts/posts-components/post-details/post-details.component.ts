@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 import {IPostDetails} from "../../../../interfaces/IPostDetails";
-import {PostDataService} from "../../post-service/post-data.service";
 
 
 @Component({
@@ -14,14 +13,10 @@ import {PostDataService} from "../../post-service/post-data.service";
 export class PostDetailsComponent implements OnInit {
   postDetailsObj: IPostDetails
 
-  constructor(private postDataService: PostDataService,
-              private activatedRoute: ActivatedRoute) {
-  }
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      this.postDataService.getPost(id).subscribe(value => this.postDetailsObj = <IPostDetails>value);
-    })
+    this.activatedRoute.data.subscribe(({postData}) => this.postDetailsObj = postData);
   }
 
 }

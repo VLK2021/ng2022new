@@ -9,6 +9,7 @@ import {PostDataService} from "./post-service/post-data.service";
 import { PostComponent } from './posts-components/post/post.component';
 import {PostGuard} from "./post-service/guards/post.guard";
 import {PostsResolver} from "./post-service/resolvers/posts.resolver";
+import {PostResolver} from "./post-service/resolvers/post.resolver";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {PostsResolver} from "./post-service/resolvers/posts.resolver";
   providers:[
     PostDataService,
     PostsResolver,
+    PostResolver,
     PostGuard
   ]
 })

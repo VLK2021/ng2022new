@@ -5,6 +5,7 @@ import {PostsComponent} from "./posts-components/posts/posts.component";
 import {PostDetailsComponent} from "./posts-components/post-details/post-details.component";
 import {PostGuard} from "./post-service/guards/post.guard";
 import {PostsResolver} from "./post-service/resolvers/posts.resolver";
+import {PostResolver} from "./post-service/resolvers/post.resolver";
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
     canActivate:[PostGuard],
     canDeactivate:[PostGuard],
   children:[
-    {path:':id', component:PostDetailsComponent}
+    {path:':id', component:PostDetailsComponent,
+      resolve:{postData:PostResolver}
+    }
   ]}
 ];
 
