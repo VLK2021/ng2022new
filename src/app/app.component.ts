@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+
+import {AuthService} from "./services";
 
 
 @Component({
@@ -7,6 +10,15 @@ import { Component } from '@angular/core';
 
 })
 
-export class AppComponent {
-  title = 'ng2022new';
+export class AppComponent implements OnInit{
+
+  constructor(private authService: AuthService, private router:Router) {
+  }
+
+  ngOnInit():void {
+    if (this.authService.isAuthorization()){
+      this.router.navigate(['cars'])
+    }
+  }
+
 }
