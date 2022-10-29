@@ -25,7 +25,6 @@ export class AuthService {
 
   refresh(): Observable<IToken> {
     const refresh = this.getRefreshToken();
-    console.log(refresh);
     return this.httpClient.post<IToken>(`${urls.auth}/refresh`, {refresh}).pipe(
       tap((tokens: IToken) => {
         this.setToken(tokens)

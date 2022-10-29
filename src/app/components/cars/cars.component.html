@@ -5,12 +5,12 @@
   <button (click)="save()">{{!carForUpdate ? 'save' : 'update'}}</button>
 </form>
 <hr>
-
 <div>
   <div *ngFor="let car of cars">
-    {{car.id}} -- {{car.model}} -- {{car.year}} -- {{car.price}}
-    <button (click)="update(car)">update</button>
-    <button (click)="delete(car.id)">delete</button>
+        {{car.id}} -- {{car.model}} -- {{car.year}} -- {{car.price}}
+        <button (click)="update(car)">update</button>
+        <button (click)="delete(car.id)">delete</button>
   </div>
 </div>
+
 

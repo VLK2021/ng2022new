@@ -10,23 +10,29 @@ import {RegEx} from '../../constants';
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.css']
 })
+
 export class CarsComponent implements OnInit {
   cars: ICar[];
   form: FormGroup;
   carForUpdate: ICar | null;
+
+
 
   constructor(private carService: CarService) {
     this._creteForm()
   }
 
   ngOnInit(): void {
-    this.carService.getAll().subscribe(value => this.cars = value)
+    //@ts-ignore
+    this.carService.getAll().subscribe(({data}) =>this.cars = data)
   }
 
   save(): void {
     if (!this.carForUpdate) {
       this.carService.create(this.form.value).subscribe(value => {
+        console.log(this.cars);
         this.cars.push(value)
+        console.log(this.cars);
         this.form.reset()
       })
     } else {
