@@ -37,6 +37,7 @@ export class CarsComponent implements OnInit {
       })
     } else {
       this.carService.updateById(this.carForUpdate.id, this.form.value).subscribe(value => {
+        console.log(value)
         const updateCar = this.cars.find(f => f.id === this.carForUpdate?.id);
         Object.assign(updateCar, value)
         this.carForUpdate = null
