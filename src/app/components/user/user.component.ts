@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {IUser} from "../../interfaces/IUser";
+import {DataService} from "../../services/data.service";
 
 
 @Component({
@@ -14,10 +15,13 @@ export class UserComponent implements OnInit {
   @Input()
   user: IUser;
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
   }
 
+  saveToStorage() {
+    this.dataService.storage.next(this.user);
+  }
 }
