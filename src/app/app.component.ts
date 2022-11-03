@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IUser} from "./interfaces/IUser";
 
 
 @Component({
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'ng2022new';
+
+  user: IUser;
+
+  catch(user: IUser) {
+    console.log(user);
+    this.user = user;
+  }
 }

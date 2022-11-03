@@ -1,1 +1,3 @@
-<app-users></app-users>
+<h1>{{user?.email}}</h1>
+
+<app-users (userEmitt)="catch($event)"></app-users>
