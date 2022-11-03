@@ -10,10 +10,4 @@ import {IUser} from "./interfaces/IUser";
 
 export class AppComponent {
 
-  user: IUser;
-
-  catch(user: IUser) {
-    console.log(user);
-    this.user = user;
-  }
 }

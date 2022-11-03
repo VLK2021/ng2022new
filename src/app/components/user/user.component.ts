@@ -14,21 +14,10 @@ export class UserComponent implements OnInit {
   @Input()
   user: IUser;
 
-  @Output()
-  userEmitter = new EventEmitter<IUser>();
-  details: string;
-
   constructor() {
   }
 
   ngOnInit(): void {
   }
-
-  emitt(user: IUser): void {
-    this.userEmitter.emit(user);
-
-    this.details = "dsome details about user";
-  }
-
 
 }
