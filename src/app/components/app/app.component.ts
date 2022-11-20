@@ -15,10 +15,7 @@ export class AppComponent {
   constructor(private userService: UserService) {
   }
 
-  getUser(): void {
-    this.userService.getUserById(this.id).subscribe(value => console.log(value))
 
-  }
 
 
 
