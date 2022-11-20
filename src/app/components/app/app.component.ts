@@ -19,4 +19,9 @@ export class AppComponent {
     this.userService.getUserById(this.id).subscribe(value => console.log(value))
 
   }
+
+
+  checkRefX(x: HTMLInputElement): void {
+    console.log(x);
+  }
 }

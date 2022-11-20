@@ -1,2 +1,3 @@
-<input type="number" [(ngModel)]="id">
+<input type="number" [(ngModel)]="id" #x>
 <button (click)="getUser()">get User</button>
+<button (click)="checkRefX(x)">checkRefX</button>
