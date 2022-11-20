@@ -6,3 +6,4 @@ const {API:baseURL} = environment;
 export const urls = {
   users: `${baseURL}/users`
 }
+
