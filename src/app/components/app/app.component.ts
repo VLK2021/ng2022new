@@ -10,7 +10,7 @@ import {UserService} from "../../services/user.service";
 })
 
 export class AppComponent {
-  id = 0;
+
 
   constructor(private userService: UserService) {
   }
@@ -21,7 +21,5 @@ export class AppComponent {
   }
 
 
-  checkRefX(x: HTMLInputElement): void {
-    console.log(x);
-  }
+
 }
