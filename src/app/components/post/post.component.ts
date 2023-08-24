@@ -22,6 +22,7 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   navigateMe(post: IPost) {
     this.router.navigate([post.id], {relativeTo: this.activatedRouter, state: {data: post}})
   }
