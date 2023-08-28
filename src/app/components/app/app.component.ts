@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 
 import {UserService} from "../../services/user.service";
+import {IUser} from "../../interfaces/IUser";
 
 
 @Component({
@@ -11,12 +12,13 @@ import {UserService} from "../../services/user.service";
 
 export class AppComponent {
   id = 0;
+  user: IUser
 
   constructor(private userService: UserService) {
   }
 
   getUser(): void {
-    this.userService.getUserById(this.id).subscribe(value => console.log(value))
+    this.userService.getUserById(this.id).subscribe(value => this.user = value);
 
   }
 

@@ -1,3 +1,5 @@
 <input type="number" [(ngModel)]="id" #x>
 <button (click)="getUser()">get User</button>
 <button (click)="checkRefX(x)">checkRefX</button>
+
+<div *ngIf="user">{{user.id}}) {{user.name}}</div>
